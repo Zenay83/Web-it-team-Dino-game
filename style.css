@@ -1,0 +1,208 @@
+.game {
+    position: relative; 
+    width: 600px; 
+    height: 200px;
+    border-bottom: 1px solid #000;
+    background-color: white; 
+    margin: auto;
+}
+
+.game::after {
+    content: ''; 
+    position: absolute; 
+    bottom: -10px; 
+    left: 0;
+    width: 100%;
+    height: 10px; 
+    background-color: rgb(190, 170, 38); 
+}
+    #dino {
+        width: 50px; height: 50px;
+        background-image: url(img/dino.png);
+         background-size: 50px 50px;
+         position: relative;
+        top: 150px;
+    }
+
+    #cactus{
+     width: 20px;
+     height: 50px;
+     background-image: url(img/cactus.png);
+     background-size: 20px 40px;
+     position: relative;
+     top: 110px;
+     left: 580px;
+     animation: cactusMov 1s infinite linear;
+    }
+
+    .best-score {
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        margin: 10px auto;
+        text-align: center;
+    }
+    
+    .score, .best-score {
+        margin: 5px auto;
+    }
+
+    @keyframes cactusMov {
+        0% {
+            left: 580px;
+        }
+        100% {
+            left: -20px;
+            }
+    }
+
+
+    .coin {
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        margin: 10px auto;
+        text-align: center;
+    }
+    .jump {
+        animation: jump    0.5s linear;
+    }
+
+    .score {
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .game {
+    position: relative; 
+    width: 600px; 
+    height: 200px;
+    border-bottom: 1px solid #000;
+    background-color: white; 
+    margin: auto;
+}
+
+.game::after {
+    content: ''; 
+    position: absolute; 
+    bottom: -10px; 
+    left: 0;
+    width: 100%;
+    height: 10px; 
+    background-color: rgb(190, 170, 38); 
+}
+    #dino {
+        width: 50px; height: 50px;
+        background-image: url(img/dino.png);
+         background-size: 50px 50px;
+         position: relative;
+        top: 150px;
+    }
+
+    #cactus{
+     width: 20px;
+     height: 50px;
+     background-image: url(img/cactus.png);
+     background-size: 20px 40px;
+     position: relative;
+     top: 110px;
+     left: 580px;
+     animation: cactusMov 1s infinite linear;
+    }
+
+    .best-score {
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        margin: 10px auto;
+        text-align: center;
+    }
+    
+    .score, .best-score {
+        margin: 5px auto;
+    }
+
+    @keyframes cactusMov {
+        0% {
+            left: 580px;
+        }
+        100% {
+            left: -20px;
+            }
+    }
+
+    .jump {
+        animation: jump    0.5s linear;
+    }
+
+    .score {
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .background {
+        position: absolute;
+        width: 100px; 
+        height: 100px; 
+        background-image: url('img/Pterodactyl_Google.jpg'); 
+        background-size: cover;
+        top: 30px;  
+        right: -100px; 
+        animation: fly 3s linear infinite; 
+        margin-bottom:800px;
+    }
+    
+    @keyframes fly {
+        0% {
+            right: -100px; 
+        }
+        100% {
+            right: 100%; 
+        }
+    }
+
+    @keyframes jump {
+        0% {
+            top: 150px;
+        }
+        30% {
+            top: 130px;
+        }
+        50% {
+            top: 80px;
+        }
+        80% {
+            top: 130px;
+        }
+        100% {
+            top: 150px;
+            }
+    }
+    
+    @keyframes fly {
+        0% {
+            right: -100px; 
+        }
+        100% {
+            right: 100%; 
+        }
+    }
+
+    @keyframes jump {
+        0% {
+            top: 150px;
+        }
+        30% {
+            top: 130px;
+        }
+        50% {
+            top: 80px;
+        }
+        80% {
+            top: 130px;
+        }
+        100% {
+            top: 150px;
+            }
+    }
