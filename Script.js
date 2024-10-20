@@ -6,21 +6,15 @@ const coinElement = document.getElementById("coin");
 
 let jumpCount = 0;
 let coinCount = 0;
-let bestScore = 0;
+let bestScore = localStorage.getItem("bestScore") ? parseInt(localStorage.getItem("bestScore")) : 0;
+bestScoreElement.innerText = "Лучший результат: " + bestScore;
 
-if (localStorage.getItem("bestScore")) {
-    bestScore = parseInt(localStorage.getItem("bestScore"));
-    bestScoreElement.innerText = "Лучший результат: " + bestScore;
-}
-
-// Обработчик события для кнопки "Enter"
 document.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         jump();
     }
 });
 
-// Обработчик события для касания на мобильных устройствах
 document.addEventListener("touchend", function () {
     jump();
 });
@@ -38,7 +32,7 @@ function jump() {
 
         setTimeout(function () {
             dino.classList.remove("jump");
-        }, 300); // Длительность прыжка, соответствующая вашей анимации
+        }, 300); // Убедитесь, что это значение (300) соответствует длительности анимации jump
     }
 }
 
@@ -47,8 +41,8 @@ let isAlive = setInterval(function () {
     let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
 
     if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
-        alert("GAME OVER");
-        
+        alert("ИГРА ОКОНЧЕНА");
+
         if (jumpCount > bestScore) {
             bestScore = jumpCount;
             localStorage.setItem("bestScore", bestScore);
@@ -56,9 +50,8 @@ let isAlive = setInterval(function () {
         }
 
         jumpCount = 0;
-        coinCount = 0; 
-        scoreElement.innerText = "Счет: " + jumpCount; 
-        coinElement.innerText = "Монеты: " + coinCount; 
+        coinCount = 0;
+        scoreElement.innerText = "Счет: " + jumpCount;
+        coinElement.innerText = "Монеты: " + coinCount;
     }
-}, 10);
 }, 10);
