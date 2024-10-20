@@ -16,13 +16,15 @@
     height: 10px; 
     background-color: rgb(190, 170, 38); 
 }
-    #dino {
-        width: 50px; height: 50px;
-        background-image: url(img/dino.png);
-         background-size: 50px 50px;
-         position: relative;
-        top: 150px;
-    }
+   #dino {
+    width: 50px;
+    height: 50px;
+    background-image: url('img/dino.png');
+    background-size: cover;
+    position: relative;
+    top: 150px; /* начальная позиция dino */
+    transition: top 0.3s ease; /* добавлен переход */
+}
     #cactus{
      width: 20px;
      height: 50px;
