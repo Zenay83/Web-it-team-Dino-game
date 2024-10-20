@@ -29,19 +29,20 @@ function jump() {
     if (!dino.classList.contains("jump")) {
         dino.classList.add("jump");
         jumpCount++;
-        scoreElement.innerText = "Счет: " + jumpCount; 
+        scoreElement.innerText = "Счет: " + jumpCount;
 
         if (jumpCount % 10 === 0) {
             coinCount++;
             coinElement.innerText = "Монеты: " + coinCount;
         }
+
+        setTimeout(function () {
+            dino.classList.remove("jump");
+        }, 300); // Длительность прыжка, соответствующая вашей анимации
     }
-    setTimeout(function() {
-        dino.classList.remove("jump");
-    }, 300);
 }
 
-let isAlive = setInterval(function() {
+let isAlive = setInterval(function () {
     let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue("top"));
     let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
 
@@ -50,7 +51,7 @@ let isAlive = setInterval(function() {
         
         if (jumpCount > bestScore) {
             bestScore = jumpCount;
-            localStorage.setItem("bestScore", bestScore); // Сохраняем лучший результат
+            localStorage.setItem("bestScore", bestScore);
             bestScoreElement.innerText = "Лучший результат: " + bestScore;
         }
 
@@ -59,4 +60,5 @@ let isAlive = setInterval(function() {
         scoreElement.innerText = "Счет: " + jumpCount; 
         coinElement.innerText = "Монеты: " + coinCount; 
     }
+}, 10);
 }, 10);
