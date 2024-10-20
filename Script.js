@@ -19,12 +19,14 @@ document.addEventListener("keydown", function (event) {
         jump();
     }
 });
-document.addEventListener("touchstart", function () {
+
+// Обработчик события для касания на мобильных устройствах
+document.addEventListener("touchend", function () {
     jump();
 });
 
 function jump() {
-    if (dino.classList != "jump") {
+    if (!dino.classList.contains("jump")) {
         dino.classList.add("jump");
         jumpCount++;
         scoreElement.innerText = "Счет: " + jumpCount; 
