@@ -13,7 +13,13 @@ if (localStorage.getItem("bestScore")) {
     bestScoreElement.innerText = "Лучший результат: " + bestScore;
 }
 
+// Обработчик события для кнопки "Enter"
 document.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        jump();
+    }
+});
+document.addEventListener("touchstart", function () {
     jump();
 });
 
@@ -22,7 +28,6 @@ function jump() {
         dino.classList.add("jump");
         jumpCount++;
         scoreElement.innerText = "Счет: " + jumpCount; 
-
 
         if (jumpCount % 10 === 0) {
             coinCount++;
@@ -46,7 +51,6 @@ let isAlive = setInterval(function() {
             localStorage.setItem("bestScore", bestScore); // Сохраняем лучший результат
             bestScoreElement.innerText = "Лучший результат: " + bestScore;
         }
-        
 
         jumpCount = 0;
         coinCount = 0; 
